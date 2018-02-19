@@ -1,7 +1,258 @@
-body {
-	background-color: #ccc;
+/* ==== GENERAL ==== */
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: url("https://images.pexels.com/photos/390089/film-movie-motion-picture-390089.jpeg?w=940&h=650&auto=compress&cs=tinysrgb") 0/cover no-repeat;
+	background-attachment: fixed;
 }
 
 .app {
-	background-color: #aaa;
+	background-color: #2A5978;
+	width: 75%;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	box-shadow: 0px 0px 0px 15px rgba(42, 88, 121, 0.4);
+	border-radius: 25px;
+	opacity: 0.97;
+}
+
+h1 {
+	margin: 0 auto;
+	margin-bottom: 20px;
+	text-align: center;
+	border-bottom: 3px solid #172F3F;
+	width: 650px;
+	height: 70px;
+	line-height: 70px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+/* ==== ADD SECTION ==== */
+
+.add-section {
+	width: 650px;
+	margin: 0 auto;
+	background-color: #172F3F;
+	border-radius: 10px;
+}
+
+.add-section::before,
+.add-section::after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+h2 {
+	text-align: center;
+	width: 250px;
+	border-bottom: 2px solid #62C1FF;
+	margin: 0 auto;
+	padding-top: 10px;
+	margin-bottom: 20px;
+}
+
+label {
+	text-transform: uppercase;
+	display: block;
+	float: left;
+	width: 100px;
+	padding: 5px;
+	margin-bottom: 20px;
+	margin-left: 40px;
+}
+
+input {
+	display: inline-block;
+	width: 250px;
+	float: left;
+	padding: 5px;
+	margin-bottom: 20px;
+	border-radius: 4px;
+	border: none;
+	height: 25px;
+}
+
+input:focus {
+	border: 2px solid #63BEFF;
+	outline: none;
+}
+
+select {
+	padding: 5px;
+	margin-bottom: 20px;
+	border-radius: 4px;
+}
+
+input[type="submit"] {
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #63BEFF;
+	font-weight: 700;
+	padding: 0;
+}
+
+input[type="submit"]:hover {
+	background-color: orange;
+}
+
+/* ==== FILMS SECTION ==== */
+
+.films {
+	border-top: 3px solid #172F3F;
+	border-radius: 30px 30px 0 0;
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 40px;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+}
+
+.films::before,
+.films::after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+h3 {
+	text-align: center;
+	width: 80%;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: 34px;
+	letter-spacing: 2px;
+	border-top: 2px solid #63BEFF;
+	border-bottom: 2px solid #172F3F;
+	border-radius: 30px;
+}
+
+.film {
+	width: 40%;
+	float: left;
+	margin-top: 40px;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #FFB350;
+	color: #000;
+	text-align: center;
+	border-radius: 25px;
+	box-shadow: 4px 4px 8px #222;
+	padding-bottom: 20px;
+}
+
+.title {
+	border-top: 2px solid #63BEFF;
+	font-size: 22px;
+	height: auto;
+	line-height: 35px;
+	font-weight: 700;
+	padding: 10px;
+	background-color: #172F3F;
+	border-radius: 25px 25px 0 0;
+	color: #fff;
+	letter-spacing: 2px;
+}
+
+.genre, .rate {
+	width: 50%;
+	float: left;
+	background-color: #4083B3;
+	height: 40px;
+	font-size: 22px;
+	line-height: 40px;
+	
+}
+
+.poster {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 70px;
+	margin-bottom: 20px;
+}
+
+img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.film a {
+	padding: 7px;
+	margin-bottom: 50px;
+	text-decoration: none;
+	background-color: #172F3F;
+	color: white;
+	border-radius: 8px;
+}
+
+.film a:hover {
+	background-color: #A61700;
+	color: #fff;
+}
+
+/* ==== MEDIA QUERRIES ==== */
+
+@media (max-width: 1000px) {
+	.app {
+		width: 95%;
+	}
+	.film {
+		display: inline-block;
+		width: 80%;
+		margin-left: 10%;
+	}
+}
+
+@media (max-width: 767px) {
+	h1 {
+		width: 90%;
+	}
+
+	.add-section {
+		width: 90%;
+	}
+
+	label {
+		margin-left: 10px;
+	}
+
+	input {
+		width: 70%;
+	}
+
+	select {
+		padding: 5px 25px;
+	}
+
+}
+
+@media (max-width: 500px) {
+	h1 {
+		font-size: 25px;
+		height: auto;
+		line-height: 45px;
+	}
+	.wide {
+		width: 95%;
+		overflow: auto;
+		margin: 0 auto;
+		margin-bottom: 10px;
+	}
+	input {
+		width: 90%;
+		margin-left: 3vw;
+	}
 }

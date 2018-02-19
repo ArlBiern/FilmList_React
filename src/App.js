@@ -18,31 +18,36 @@ class App extends Component {
         id: uuid.v4(),
         title: 'Saving Private Ryan',
         genres: 'War',
-        rating: '9'
+        rating: '9',
+        poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SY1000_CR0,0,679,1000_AL_.jpg'
         },
         {
         id: uuid.v4(),
         title: 'The Shawshank Redemption',
         genres: 'Drama',
-        rating: '9'
+        rating: '9',
+        poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg'
         },
         {
         id: uuid.v4(),
         title: 'Fight Club',
         genres: 'Drama',
-        rating: "8"
+        rating: "8",
+        poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMzFjMWNhYzQtYTIxNC00ZWQ1LThiOTItNWQyZmMxNDYyMjA5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,675,1000_AL_.jpg'
         },
         {
         id: uuid.v4(),
         title: 'The Intouchables',
         genres: 'Comedy',
-        rating: "9"
+        rating: "9",
+        poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_SY1000_CR0,0,674,1000_AL_.jpg'
         },
         {
         id: uuid.v4(),
         title: 'The Room',
         genres: 'Drama',
-        rating: "1"
+        rating: "1",
+        poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4MTU1MzgwOV5BMl5BanBnXkFtZTcwNjM1MTAwMQ@@._V1_.jpg'
         }
     ]});
   }
@@ -53,7 +58,7 @@ class App extends Component {
     this.setState({films: films});
   }
 
-  handelDelateFilm(id) {
+  handelDeleteFilm(id) {
     let films = this.state.films;
     let index = films.findIndex(x => x.id === id);
     films.splice(index, 1);
@@ -63,8 +68,9 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+          <h1>Film rating section</h1>
           <AddFilm addFilm={this.handleAddFilm.bind(this)}/>
-          <Films films={this.state.films} onDelete={this.handelDelateFilm.bind(this)}/>
+          <Films films={this.state.films} onDelete={this.handelDeleteFilm.bind(this)}/>
       </div>
     );
   }

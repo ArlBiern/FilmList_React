@@ -17,7 +17,7 @@ class Films extends Component {
 		}
 	    return (
 	      <div className="films">
-	      	<h3>Films information</h3>
+	      	<h3>Your films</h3>
 	        {filmItems}	        
 	      </div>
 	    );

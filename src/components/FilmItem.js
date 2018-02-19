@@ -7,9 +7,13 @@ class FilmItem extends Component {
 	}
 	render() {
 	    return (
-	      <li className="film">
-	        <strong>{this.props.film.title}</strong>: {this.props.film.category} <a href="#" onClick={this.deleteFilm.bind(this, this.props.film.id)}>X</a>
-	      </li>
+	      <div className="film">
+	        <div className='title'>{this.props.film.title}</div>
+	        <div className='genre'>Genre: {this.props.film.genres}</div>
+	        <div className='rate'>Rating: {this.props.film.rating}</div>
+	        <div className='poster'><img src={this.props.film.poster} alt='POSTE' /></div>
+	        <a href="#" onClick={this.deleteFilm.bind(this, this.props.film.id)}>Remove movie</a>
+	      </div>
 	    );
 	}
 }

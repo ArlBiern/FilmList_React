@@ -23,10 +23,13 @@ class AddFilm extends Component {
                 id: uuid.v4(),
                 title:this.refs.title.value,
                 genres: this.refs.genre.value,
-                rating: this.refs.rate.value
+                rating: this.refs.rate.value,
+                poster: this.refs.poster.value
             }},
             function() {
                 this.props.addFilm(this.state.newFilm);
+                this.refs.title.value = "";
+                this.refs.poster.value = "";
             }
             );
         }
@@ -41,25 +44,32 @@ class AddFilm extends Component {
         let ratings = this.props.rating.map(rate => {
             return <option key={rate} value={rate}>{rate}</option>
         })
+        
         return (
-          <div>
-            <h3>Add Project</h3>
+          <div className="add-section">
+            <h2>Add Film</h2>
             <form onSubmit={this.handleSubmit.bind(this)}>
-                <div>
-                    <label>Title</label><br />
-                    <input type="text" ref="title" />
+                <div className="wide">
+                    <label>Title</label>
+                    <input type="text" ref="title"/>
                 </div>
-                <div>
-                    <label>Category</label><br />
+                <div className="wide">
+                    <label>Genre</label>
                     <select ref="genre">
                         {genresOptions}
                     </select>
+                </div>
+                <div className="wide">
+                    <label>Poster</label>
+                    <input type="text" ref="poster" />
+                </div>
+                <div className="wide">
+                    <label>Rating</label>
                     <select ref="rate">
                         {ratings}
                     </select>
                 </div>
-                <br />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Add your film!" />
             </form>        
           </div>
         );

@@ -30,13 +30,6 @@ class App extends Component {
         },
         {
         id: uuid.v4(),
-        title: 'Fight Club',
-        genres: 'Drama',
-        rating: "8",
-        poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMzFjMWNhYzQtYTIxNC00ZWQ1LThiOTItNWQyZmMxNDYyMjA5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,675,1000_AL_.jpg'
-        },
-        {
-        id: uuid.v4(),
         title: 'The Intouchables',
         genres: 'Comedy',
         rating: "9",
